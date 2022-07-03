@@ -10,6 +10,7 @@ router.get("/:id", (req, res) => {
         message: `GET - http://${req.hostname}:${process.env.port}/${id}`,
         metadata: {
             method: req.method,
+            host: req.hostname,
             port: process.env.port,
             ID: id,
         }
@@ -24,6 +25,7 @@ router.patch("/:id", (req, res) => {
         message: `PATCH - http://${req.hostname}:${process.env.port}/${id}`,
         metadata: {
             method: req.method,
+            host: req.hostname,
             port: process.env.port,
             ID: id,
         }
@@ -37,7 +39,8 @@ router.put("/:id", (req, res) => {
     res.status(200).json({
         message: `PUT - http://${req.hostname}:${process.env.port}/${id}`,
         metadata: {
-            method: req.hostname,
+            method: req.method,
+            host: req.hostname,
             port: process.env.port,
             ID: id,
         }
@@ -51,7 +54,8 @@ router.delete("/:id", (req, res) => {
     res.status(200).json({
         message: `DELETE - http://${req.hostname}:${process.env.port}/${id}`,
         metadata: {
-            method: req.hostname,
+            method: req.method,
+            host: req.hostname,
             port: process.env.port,
             ID: id,
         }
