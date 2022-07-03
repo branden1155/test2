@@ -38,6 +38,7 @@ router.put("/:id", (req, res) => {
         message: `PUT - http://${req.hostname}:${process.env.port}/${id}`,
         metadata: {
             method: req.hostname,
+            port: process.env.port,
             ID: id,
         }
     })
@@ -51,6 +52,7 @@ router.delete("/:id", (req, res) => {
         message: `DELETE - http://${req.hostname}:${process.env.port}/${id}`,
         metadata: {
             method: req.hostname,
+            port: process.env.port,
             ID: id,
         }
     })
